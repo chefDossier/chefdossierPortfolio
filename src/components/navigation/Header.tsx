@@ -11,7 +11,7 @@ export default function Header({ onOpenMenu }: HeaderProps) {
   const pathname = usePathname();
   
   const navItems = [
-    { name: "Projets", href: "/work", icon: <FiLayers size={18} /> },
+    { name: "Projets", href: "/projects", icon: <FiLayers size={18} /> },
     { name: "Expertise", href: "/expertise", icon: <FiActivity size={18} /> },
     { name: "À Propos", href: "/about", icon: <FiUser size={18} /> },
   ];
