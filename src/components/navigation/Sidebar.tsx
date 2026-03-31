@@ -52,7 +52,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           
           <div className="w-6 h-[1px] bg-white/10"></div>
           
-          <Link href="mailto:contact@mounir.com" className="icon-industry hover:text-indigo-custom transition-all">
+          <Link href="mailto:mounirmohamed22@gmail.com" className="icon-industry hover:text-indigo-custom transition-all">
             <FiMail size={18} />
           </Link>
         </nav>

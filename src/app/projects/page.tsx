@@ -150,7 +150,7 @@ export default function PortfolioShowcase() {
              <p className="text-white/30 text-lg italic max-w-md mx-auto">"Transformons vos idées en architectures robustes et durables."</p>
            </div>
            
-           <Link href="mailto:contact@mounir.com" className="inline-flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.5em] py-7 px-16 rounded-2xl bg-white text-black hover:bg-[#4a3728] hover:text-white transition-all duration-500 shadow-2xl">
+           <Link href="mailto:mounirmohamed22@gmail.com" className="inline-flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.5em] py-7 px-16 rounded-2xl bg-white text-black hover:bg-[#4a3728] hover:text-white transition-all duration-500 shadow-2xl">
              Démarrer une collaboration <FiArrowRight />
            </Link>
         </div>

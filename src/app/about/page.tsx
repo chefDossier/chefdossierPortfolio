@@ -158,7 +158,7 @@ export default function AboutPage() {
           {/* Floating Action Button */}
           <div className="relative z-10 shrink-0 md:-translate-x-8 group-hover:translate-x-0 transition-transform duration-700">
             <Link 
-              href="mailto:contact@mounir.com" 
+              href="mailto:mounirmohamed22@gmail.com" 
               className="relative inline-flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.4em] py-6 px-12 rounded-2xl bg-white text-black hover:bg-[#4a3728] hover:text-white transition-all duration-500 overflow-hidden shadow-2xl active:scale-95 group/btn"
             >
               <span className="relative z-10">Démarrer un projet</span>

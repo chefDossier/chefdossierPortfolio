@@ -78,7 +78,7 @@ export default function Home() {
           <h3 className="text-white text-4xl font-black tracking-tighter uppercase leading-none">Let's<br/>Talk</h3>
         </div>
         <Link 
-          href="mailto:contact@mounir.com"
+          href="mailto:mounirmohamed22@gmail.com"
           className="w-full py-5 bg-white text-black text-[11px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-indigo-custom hover:text-white transition-all shadow-xl shadow-black/40"
         >
           Message
