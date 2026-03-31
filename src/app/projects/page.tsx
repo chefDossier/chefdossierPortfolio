@@ -7,16 +7,6 @@ import {
 export default function PortfolioShowcase() {
   return (
     <div className="relative bg-[#0a0a0a]/30 backdrop-blur-3xl text-white min-h-screen font-sans selection:bg-purple-custom/30">
-      
-      {/* --- NAVIGATION --- */}
-      <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center border-b border-white/5">
-        <Link href="/" className="group flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.4em] text-white/40 hover:text-white transition-colors">
-          <FiArrowLeft className="group-hover:-translate-x-2 transition-transform" /> Accueil
-        </Link>
-        <span className="text-[10px] font-black uppercase tracking-[0.5em] text-purple-custom animate-pulse">Portfolio Professionnel ©2026</span>
-      </nav>
-
-      {/* --- HEADER --- */}
       <header className="max-w-7xl mx-auto px-6 pt-24 pb-32 space-y-8 text-center">
         <h1 className="text-6xl md:text-9xl font-serif font-black tracking-tighter leading-none">
           Projets <br />
