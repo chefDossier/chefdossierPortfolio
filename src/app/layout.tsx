@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+"use client"; // Obligatoire car on utilise du State
+import { useState } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// Importation des nouveaux composants modulaires
 import Sidebar from "@/components/navigation/Sidebar";
 import Header from "@/components/navigation/Header";
 import HeroBackground from "@/components/ui/HeroBackground";
@@ -17,16 +17,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Mounir | Software Engineer & Data Scientist",
-  description: "Portfolio de Mounir, Ingénieur Logiciel et Master en IA",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // 1. Création de l'état pour la navigation mobile
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <html
       lang="fr"
@@ -35,18 +33,21 @@ export default function RootLayout({
       <body className="h-full overflow-hidden bg-background text-foreground">
         <div className="relative h-screen w-full flex flex-col">
           
-          {/* Couche de fond (Nette et persistante) */}
+          {/* Couche de fond */}
           <HeroBackground />
 
-          {/* Navigation Latérale Fixe */}
-          <Sidebar />
+          {/* 2. On passe l'état et la fonction de fermeture à la Sidebar */}
+          <Sidebar 
+            isOpen={isSidebarOpen} 
+            onClose={() => setIsSidebarOpen(false)} 
+          />
 
-          {/* Layout Principal : Header + Contenu Dynamique */}
+          {/* Layout Principal */}
           <div className="relative z-10 flex flex-col h-full w-full md:pr-[80px]">
             
-            <Header />
+            {/* 3. On passe la fonction d'ouverture au Header */}
+            <Header onOpenMenu={() => setIsSidebarOpen(true)} />
             
-            {/* Zone de défilement pour les pages (About, Projects, etc.) */}
             <main className="flex-1 w-full overflow-y-auto custom-scroll no-scrollbar">
               {children}
             </main>
@@ -64,7 +65,6 @@ export default function RootLayout({
               </div>
             </footer>
           </div>
-
         </div>
       </body>
     </html>
