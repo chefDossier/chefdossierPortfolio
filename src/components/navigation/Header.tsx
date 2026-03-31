@@ -19,7 +19,7 @@ export default function Header({ onOpenMenu }: HeaderProps) {
   return (
     <>
       {/* --- HEADER DESKTOP & TOP BAR MOBILE --- */}
-      <header className="w-full max-w-7xl mx-auto py-4 md:pt-12 flex items-center justify-between shrink-0 relative z-[70]">
+      <header className="w-full max-w-7xl mx-auto p-4 md:pt-12 flex items-center justify-between shrink-0 relative z-[70]">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center bg-white/5 group-hover:border-purple-custom/50 transition-all duration-500 text-white">
             <span className="text-xs font-black">M.</span>
