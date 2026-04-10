@@ -35,9 +35,11 @@ export default function AboutPage() {
                 Engineering the future
               </p>
             </div>
-            <h1 className="text-7xl md:text-9xl font-serif font-black tracking-tighter leading-[0.8] mb-4">
+            <h1 className="text-[13vw] md:text-[min(11vw,9rem)] font-serif font-black tracking-tighter leading-[0.8] mb-4 break-words overflow-hidden">
               L'Équilibre<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-custom via-indigo-custom to-emerald-custom">Technique.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-custom via-indigo-custom to-emerald-custom inline-block">
+                Technique.
+              </span>
             </h1>
           </div>
           
