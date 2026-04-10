@@ -7,10 +7,12 @@ import {
 export default function PortfolioShowcase() {
   return (
     <div className="relative bg-[#0a0a0a]/30 backdrop-blur-3xl text-white min-h-screen font-sans selection:bg-purple-custom/30">
-      <header className="max-w-7xl mx-auto px-6 pt-24 pb-32 space-y-8 text-center">
-        <h1 className="text-6xl md:text-9xl font-serif font-black tracking-tighter leading-none">
+      <header className="max-w-7xl mx-auto px-6 pt-24 pb-32 space-y-8 text-center overflow-hidden">
+        <h1 className="text-[12vw] md:text-[min(10vw,9rem)] font-serif font-black tracking-tighter leading-[0.85] break-words">
           Projets <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-custom via-indigo-custom to-emerald-400">Sélectionnés.</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-custom via-indigo-custom to-emerald-400 inline-block">
+            Sélectionnés.
+          </span>
         </h1>
         <p className="text-white/40 text-lg md:text-xl font-medium italic max-w-2xl mx-auto">
           "De la conception d'architectures publicitaires à la scalabilité des plateformes événementielles."
