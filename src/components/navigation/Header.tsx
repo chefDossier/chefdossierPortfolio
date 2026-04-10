@@ -18,10 +18,11 @@ export default function Header({ onOpenMenu }: HeaderProps) {
 
   return (
     <>
-      {/* CORRECTION : Sticky + top-0 + min-h-20. 
-          Cela empêche le header de se faire "pousser" hors de l'écran par le flux flexbox.
+      {/* FIX : 'fixed' sur mobile pour éviter qu'il ne remonte. 
+          'md:sticky' sur desktop car le comportement y est stable.
+          Ajout de backdrop-blur-md pour la visibilité des icônes.
       */}
-      <header className="sticky top-0 w-full max-w-7xl mx-auto p-4 md:pt-12 flex items-center justify-between shrink-0 z-[100] min-h-[80px]">
+      <header className="fixed md:sticky top-0 left-0 right-0 w-full max-w-7xl mx-auto p-4 md:pt-12 flex items-center justify-between shrink-0 z-[100] min-h-[80px] bg-background/50 backdrop-blur-md md:bg-transparent">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center bg-white/5 group-hover:border-purple-custom/50 transition-all duration-500 text-white">
             <span className="text-xs font-black">M.</span>
@@ -61,11 +62,11 @@ export default function Header({ onOpenMenu }: HeaderProps) {
         </div>
       </header>
 
-      {/* NAVIGATION MOBILE : On maintient le z-index très haut pour passer au-dessus de tout */}
+      {/* NAVIGATION MOBILE LATÉRALE */}
       <nav className="md:hidden fixed left-0 top-1/2 -translate-y-1/2 w-14 py-8 flex flex-col items-center gap-6 bg-black/60 backdrop-blur-3xl border-y border-r border-white/10 rounded-r-2xl z-[9999] shadow-[10px_0_30px_rgba(0,0,0,0.5)]">
         <Link 
           href="/" 
-          className={`p-3 transition-all duration-300 ${pathname === '/' ? 'text-purple-custom scale-110' : 'text-white/20'}`}
+          className={`relative p-3 transition-all duration-300 ${pathname === '/' ? 'text-purple-custom scale-110' : 'text-white/20'}`}
         >
           <FiHome size={20} />
           {pathname === '/' && (
