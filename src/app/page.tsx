@@ -75,15 +75,7 @@ export default function Home() {
         ))}
 
         {/* Carte Contact */}
-        <div className="flex flex-col justify-center items-center p-8 bg-black border border-[#1f1f1f] rounded-[2rem] text-center">
-          <h3 className="text-white text-2xl font-black uppercase mb-6">Let's Build.</h3>
-          <Link 
-            href="mailto:mounirmohamed22@gmail.com"
-            className="flex items-center gap-2 px-8 py-4 bg-white text-black text-[11px] font-bold uppercase rounded-full hover:bg-gray-200 transition-colors"
-          >
-            Contacter <FiExternalLink size={14} />
-          </Link>
-        </div>
+        
       </div>
     </div>
   );

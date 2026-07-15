@@ -15,7 +15,7 @@ export default function Navigation() {
   ];
 
   return (
-    <>
+    <> 
       {/* HEADER SLIM & NON-INTRUSIF */}
       <header className="sticky top-0 w-full bg-white/80 backdrop-blur-md z-[60] border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
