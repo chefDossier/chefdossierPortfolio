@@ -53,7 +53,7 @@ export default function ExpertisePage() {
       {/* --- GRILLE D'EXPERTISE --- */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {expertises.map((item) => (
-          <div key={item.id} className="group relative p-10 bg-white/[0.02] backdrop-blur-3xl border border-white/5 rounded-[2.5rem] hover:border-white/10 transition-all duration-500 overflow-hidden">
+          <div key={item.id} className="group relative p-10 bg-white/[0.02] backdrop-blur-3xl border border-white/5 border-4 rounded-[2.5rem] hover:border-white/10 transition-all duration-500 overflow-hidden">
             <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${item.color} to-transparent opacity-0 group-hover:opacity-10 blur-[80px] transition-opacity`}></div>
             
             <div className="relative z-10 space-y-8">

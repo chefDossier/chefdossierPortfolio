@@ -1,11 +1,8 @@
 "use client";
-import { useState } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import Sidebar from "@/components/navigation/Sidebar";
-import Header from "@/components/navigation/Header";
-import HeroBackground from "@/components/ui/HeroBackground";
+import Navigation from "@/components/navigation/Navigation"; // Ton nouveau composant fusionné
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,34 +19,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
   return (
     <html
       lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="h-full overflow-hidden bg-background text-foreground">
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          <HeroBackground />
-        </div>
-
-        {/* h-[100dvh] gère mieux la barre d'adresse mobile que h-screen */}
+        
+        {/* Le conteneur principal gère désormais tout le flux */}
         <div className="relative h-[100dvh] w-full flex flex-col overflow-hidden">
           
-          <Sidebar 
-            isOpen={isSidebarOpen} 
-            onClose={() => setIsSidebarOpen(false)} 
-          />
+          <Navigation />
 
-          <div className="relative z-10 flex flex-col h-full w-full md:pr-[80px]">
+          <div className="relative z-10 flex flex-col h-full w-full">
             
-            <Header onOpenMenu={() => setIsSidebarOpen(true)} />
-            
-            {/* pt-20 : On pousse le contenu vers le bas sur mobile uniquement 
-                pour qu'il ne passe pas sous le Header fixe.
-            */}
-            <main className="flex-1 w-full overflow-y-auto custom-scroll no-scrollbar flex flex-col pt-20 md:pt-0">
+            {/* Le main prend toute la hauteur disponible */}
+            <main className="flex-1 w-full overflow-y-auto custom-scroll no-scrollbar flex flex-col">
               
               <div className="flex-1">
                 {children}

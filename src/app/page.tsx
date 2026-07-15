@@ -1,88 +1,89 @@
 import Link from "next/link";
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiExternalLink, FiCode, FiActivity, FiZap } from 'react-icons/fi';
 
 export default function Home() {
+  // Les données sont conservées pour maintenir les liens et le contenu original
   const cards = [
-    {
-      id: "01",
-      title: "À propos",
-      desc: "Ingénieur logiciel passionné par l'IA et le Green IT.",
-      href: "/about",
-      gradient: "from-purple-custom/20 to-transparent",
-      border: "border-purple-custom/30",
-      accent: "text-purple-custom"
+    { 
+      id: "01", 
+      title: "À propos", 
+      desc: "Ingénieur logiciel spécialisé en IA et systèmes durables (Green IT).", 
+      href: "/about", 
+      icon: <FiCode size={24} />,
+      tags: ["SOFTWARE", "ENGINEERING"] 
     },
-    {
-      id: "02",
-      title: "Projets",
-      desc: "De la prédiction cardiaque au monitoring énergétique.",
-      href: "/projects",
-      gradient: "from-indigo-custom/20 to-transparent",
-      border: "border-indigo-custom/30",
-      accent: "text-indigo-custom"
+    { 
+      id: "02", 
+      title: "Projets", 
+      desc: "Architecture de solutions, de la prédiction médicale au monitoring énergétique.", 
+      href: "/projects", 
+      icon: <FiActivity size={24} />,
+      tags: ["DATA SCIENCE", "IA"] 
     },
-    {
-      id: "03",
-      title: "Expertise",
-      desc: "Data Science, Full-stack et optimisation de performances.",
-      href: "/expertise",
-      gradient: "from-emerald-custom/20 to-transparent",
-      border: "border-emerald-custom/30",
-      accent: "text-emerald-custom"
+    { 
+      id: "03", 
+      title: "Expertise", 
+      desc: "Full-stack Engineering et modèles prédictifs haute performance.", 
+      href: "/expertise", 
+      icon: <FiZap size={24} />,
+      tags: ["FULL-STACK", "PERFORMANCE"] 
     }
   ];
 
   return (
-    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 md:gap-12 px-6 md:px-20 py-10">
-      {cards.map((card) => (
-        <article 
-          key={card.id}
-          className={`relative overflow-hidden glass-panel ${card.border} w-[85vw] sm:w-[350px] md:w-[420px] shrink-0 p-8 md:p-14 rounded-[3rem] md:rounded-[4rem] group flex flex-col justify-between h-[450px] md:h-[550px] hover:-translate-y-3 shadow-2xl shadow-black/50 transition-all duration-500`}
-        >
-          {/* Ligne d'accentuation haute */}
-          <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${card.gradient} opacity-30 group-hover:opacity-100 transition-opacity rounded-t-[3rem] md:rounded-t-[4rem]`}></div>
+    <div className="w-full max-w-7xl mx-auto px-6 py-12 md:py-20">
+      
+      {/* Header */}
+      <div className="mb-12">
+        <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter">Bienvenue.</h1>
+        <p className="text-gray-500 mt-4 max-w-md">Découvrez mon approche de l'ingénierie logicielle et mes projets en cours.</p>
+      </div>
 
-          <div className="relative z-10">
-            <div className="flex justify-between items-center mb-10 md:mb-16">
-              <span className={`text-[10px] font-black uppercase tracking-[0.6em] ${card.accent}`}>
-                N° {card.id}
-              </span>
-              <div className={`w-2 h-2 rounded-full ${card.accent.replace('text', 'bg')} shadow-[0_0_15px_currentColor] animate-pulse`}></div>
-            </div>
-
+      {/* Grille de cartes */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cards.map((card) => (
+          <article 
+            key={card.id}
+            className="flex flex-col justify-between p-8 bg-[#111111] border border-[#1f1f1f] rounded-[2rem] hover:border-[#333] transition-all duration-300 group"
+          >
             <div className="space-y-6">
-              <h2 className="text-5xl md:text-7xl font-serif font-black tracking-tighter leading-[0.85]">
-                {card.title}<span className={card.accent}>.</span>
-              </h2>
-              <p className="text-xs md:text-sm leading-relaxed text-white/40 font-medium max-w-[260px]">
-                {card.desc}
-              </p>
+              <div className="flex justify-between items-start">
+                <div className="p-4 bg-[#1a1a1a] rounded-2xl border border-[#262626] text-white">
+                  {card.icon}
+                </div>
+                <span className="text-[10px] font-black uppercase text-[#444] tracking-[0.2em]">0{card.id}</span>
+              </div>
+              
+              <h2 className="text-3xl font-bold text-white tracking-tight">{card.title}</h2>
+              <p className="text-sm text-[#888] leading-relaxed">{card.desc}</p>
+              
+              <div className="flex flex-wrap gap-2 pt-2">
+                {card.tags.map((tag) => (
+                  <span key={tag} className="px-3 py-1 bg-[#1a1a1a] border border-[#262626] rounded-lg text-[9px] font-bold text-[#666] tracking-wider">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+            
+            <div className="mt-8 pt-6 border-t border-[#1f1f1f]">
+              <Link href={card.href} className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-white hover:text-gray-400 transition-colors">
+                Explorer <FiArrowRight size={14} />
+              </Link>
+            </div>
+          </article>
+        ))}
 
-          <div className="relative z-10 pt-8">
-            <Link 
-              href={card.href}
-              className="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] py-4 px-10 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-all group/btn"
-            >
-              Explorer <FiArrowRight className="group-hover/btn:translate-x-2 transition-transform text-indigo-custom" />
-            </Link>
-          </div>
-        </article>
-      ))}
-
-      {/* Carte Contact rapide */}
-      <div className="relative overflow-hidden border border-white/10 bg-white/[0.03] w-[75vw] sm:w-[300px] shrink-0 p-10 md:p-14 rounded-[3rem] md:rounded-[4rem] flex flex-col justify-center items-center text-center gap-10 h-[450px] md:h-[550px]">
-        <div className="space-y-4">
-          <p className="text-indigo-custom text-[10px] uppercase font-black tracking-[0.5em]">Status: Open</p>
-          <h3 className="text-white text-4xl font-black tracking-tighter uppercase leading-none">Let's<br/>Talk</h3>
+        {/* Carte Contact */}
+        <div className="flex flex-col justify-center items-center p-8 bg-black border border-[#1f1f1f] rounded-[2rem] text-center">
+          <h3 className="text-white text-2xl font-black uppercase mb-6">Let's Build.</h3>
+          <Link 
+            href="mailto:mounirmohamed22@gmail.com"
+            className="flex items-center gap-2 px-8 py-4 bg-white text-black text-[11px] font-bold uppercase rounded-full hover:bg-gray-200 transition-colors"
+          >
+            Contacter <FiExternalLink size={14} />
+          </Link>
         </div>
-        <Link 
-          href="mailto:mounirmohamed22@gmail.com"
-          className="w-full py-5 bg-white text-black text-[11px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-indigo-custom hover:text-white transition-all shadow-xl shadow-black/40"
-        >
-          Message
-        </Link>
       </div>
     </div>
   );
