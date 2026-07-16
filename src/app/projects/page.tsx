@@ -85,7 +85,7 @@ export default function PortfolioShowcase() {
       </section>
 
       {/* --- FINAL CTA --- */}
-      <footer className="py-40 text-center border-t border-[#00FF66]/10">
+      <div className="py-40 text-center border-t border-[#00FF66]/10">
          <div className="max-w-2xl mx-auto px-6">
             <p className="mb-12 text-lg text-white/60 leading-relaxed">
               Mon approche est guidée par l'innovation constante et l'excellence technique. Que ce soit à travers l'optimisation des flux de données ou le développement d'interfaces fluides, je transforme des concepts complexes en solutions digitales impactantes. Prêt à bâtir l'avenir ?
@@ -95,7 +95,7 @@ export default function PortfolioShowcase() {
               Démarrer une collaboration <FiArrowRight size={16} />
             </Link>
          </div>
-      </footer>
+      </div>
     </div>
   );
 }

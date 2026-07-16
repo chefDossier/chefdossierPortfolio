@@ -1,17 +1,17 @@
 import Link from "next/link";
 import Image from "next/image"; // N'oublie pas d'importer Image
-import { FiGithub, FiLinkedin, FiInstagram, FiTwitter, FiMessageCircle, FiMail } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiInstagram, FiX, FiMessageCircle, FiMail } from 'react-icons/fi';
 import { FaFacebook, FaTiktok } from 'react-icons/fa';
 
 export default function Footer() {
   const socials = [
-    { name: "LinkedIn", href: "#", icon: <FiLinkedin size={20} /> },
-    { name: "GitHub", href: "#", icon: <FiGithub size={20} /> },
-    { name: "Instagram", href: "#", icon: <FiInstagram size={20} /> },
-    { name: "Twitter", href: "#", icon: <FiTwitter size={20} /> },
-    { name: "WhatsApp", href: "#", icon: <FiMessageCircle size={20} /> },
-    { name: "Facebook", href: "#", icon: <FaFacebook size={20} /> },
-    { name: "TikTok", href: "#", icon: <FaTiktok size={20} /> },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/mo-mounir-70a836300", icon: <FiLinkedin size={20} /> },
+    { name: "GitHub", href: "https://github.com/chefDossier", icon: <FiGithub size={20} /> },
+    { name: "Instagram", href: "https://www.instagram.com/momounirchefdoss?igsh=YWJldjkyajBzOXFy", icon: <FiInstagram size={20} /> },
+    { name: "X", href: "https://x.com/MounirKx", icon: <FiX size={20} /> },
+    { name: "WhatsApp", href: "https://wa.me/237692854104", icon: <FiMessageCircle size={20} /> },
+    { name: "Facebook", href: "https://www.tiktok.com/@lifedesigne?_r=1&_t=ZS-9850e8cKBk0", icon: <FaFacebook size={20} /> },
+    { name: "TikTok", href: "https://www.facebook.com/mounir.chefdossier?mibextid=ZbWKwL", icon: <FaTiktok size={20} /> },
   ];
 
   return (
