@@ -33,15 +33,12 @@ export default function Home() {
     <div className="w-full max-w-7xl mx-auto px-6 py-12 md:py-20">
       
       {/* HEADER STRUCTURÉ */}
-      {/* Ajout de classes responsives pour gérer l'ordre : md:flex-row conserve l'ordre original sur grand écran */}
-      <header className="py-12 text-center flex flex-col-reverse md:flex-row md:items-center md:justify-center md:gap-6">
+      {/* flex-col place l'icône en dessous du texte sur mobile, md:flex-row la place à droite sur desktop */}
+      <header className="py-12 text-center flex flex-col md:flex-row items-center justify-center gap-6">
         
-        {/* Conteneur du texte (Titre + Paragraphe) */}
-        {/* Ajustement des marges pour mobile */}
-        <div className="flex flex-col items-center justify-center gap-6 mt-10 md:mt-0">
-          <div className="flex items-center gap-4">
-            <h1 className="text-6xl font-black tracking-tight text-white">Bienvenue.</h1>
-          </div>
+        {/* Conteneur du texte */}
+        <div className="flex flex-col items-center justify-center gap-6">
+          <h1 className="text-6xl font-black tracking-tight text-white">Bienvenue.</h1>
           <p className="text-[#888] text-lg md:text-xl font-light">
             Découvrez mes projets en cours et mon approche de <br/> 
             <span className="text-[clamp(2rem,5vw,4rem)] font-light tracking-tighter text-white/90">
@@ -50,9 +47,8 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Conteneur de l'icône (le losange) */}
-        {/* Ajout de md:mb-8 pour retrouver l'alignement original avec le titre "Bienvenue." sur desktop */}
-        <div className="flex items-center justify-center md:mb-8">
+        {/* Conteneur de l'icône (losange) */}
+        <div className="flex items-center justify-center">
           <div className="w-16 h-16 bg-[#0066FF] flex items-center justify-center rotate-45 shrink-0">
             <div className="w-8 h-8 border-t-2 border-l-2 border-black rotate-[-45deg]"></div>
           </div>
