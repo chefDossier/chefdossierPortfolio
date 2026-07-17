@@ -8,7 +8,7 @@ export default function Home() {
       title: "À propos", 
       desc: "Ingénieur logiciel spécialisé en IA et systèmes durables (Green IT).", 
       href: "/about", 
-      icon: <FiCode size={24} />,
+      icon: <FiCode size={40} />,
       tags: ["SOFTWARE", "ENGINEERING"] 
     },
     { 
@@ -16,7 +16,7 @@ export default function Home() {
       title: "Projets", 
       desc: "Architecture de solutions, de la prédiction médicale au monitoring énergétique.", 
       href: "/projects", 
-      icon: <FiActivity size={24} />,
+      icon: <FiActivity size={40} />,
       tags: ["DATA SCIENCE", "IA"] 
     },
     { 
@@ -24,7 +24,7 @@ export default function Home() {
       title: "Expertise", 
       desc: "Full-stack Engineering et modèles prédictifs haute performance.", 
       href: "/expertise", 
-      icon: <FiZap size={24} />,
+      icon: <FiZap size={40} />,
       tags: ["FULL-STACK", "PERFORMANCE"] 
     }
   ];
@@ -32,22 +32,31 @@ export default function Home() {
   return (
     <div className="w-full max-w-7xl mx-auto px-6 py-12 md:py-20">
       
-      {/* Header */}
-      <div className="mb-16">
-        <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter">Bienvenue.</h1>
-        <p className="text-gray-500 mt-4 max-w-md">Découvrez mon approche de l'ingénierie logicielle et mes projets en cours.</p>
-      </div>
+      {/* HEADER STRUCTURÉ */}
+      <header className="py-12 text-center">
+        <div className="flex flex-col items-center justify-center gap-6">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-16 h-16 bg-[#0066FF] flex items-center justify-center rotate-45">
+              <div className="w-8 h-8 border-t-2 border-l-2 border-black rotate-[-45deg]"></div>
+            </div>
+            <h1 className="text-6xl font-black tracking-tight text-white">Bienvenue.</h1>
+          </div>
+          <p className="text-[#888] text-lg md:text-xl font-light">
+            Découvrez mes projets en cours et mon approche de <br/> <span className="text-[clamp(2rem,5vw,4rem)] font-light tracking-tighter text-white/90">l'ingénierie <span className="text-[#0066FF]">logicielle</span></span> 
+          </p>
+        </div>
+      </header>
 
-      {/* Grille de cartes */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* GRILLE DE CARTES */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-12 border-t border-[#1f1f1f]">
         {cards.map((card) => (
           <article 
             key={card.id}
             className="flex flex-col justify-between p-8 bg-[#111111] border border-[#1f1f1f] rounded-[2rem] hover:border-[#0066FF]/50 transition-all duration-300 group hover:shadow-[0_0_30px_-10px_rgba(0,102,255,0.3)]"
           >
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="flex justify-between items-start">
-                <div className="p-4 bg-[#1a1a1a] rounded-2xl border border-[#262626] text-[#0066FF]">
+                <div className="text-[#0066FF]">
                   {card.icon}
                 </div>
                 <span className="text-[10px] font-black uppercase text-[#444] tracking-[0.2em]">0{card.id}</span>
@@ -73,11 +82,11 @@ export default function Home() {
           </article>
         ))}
 
-        {/* Carte Contact rapide */}
+        {/* CARTE CONTACT */}
         <article className="flex flex-col justify-center items-center p-8 bg-[#0066FF] rounded-[2rem] text-white text-center gap-4 hover:bg-[#0052cc] transition-colors cursor-pointer">
-           <FiMessageCircle size={32} />
-           <h3 className="font-bold text-lg">Parlons projet</h3>
-           <p className="text-white/70 text-xs">Disponible pour de nouvelles collaborations.</p>
+           <FiMessageCircle size={40} />
+           <h3 className="font-bold text-2xl">Parlons projet</h3>
+           <p className="text-white/70 text-sm">Disponible pour de nouvelles collaborations.</p>
         </article>
       </div>
     </div>

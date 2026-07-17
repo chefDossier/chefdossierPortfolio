@@ -10,8 +10,8 @@ export default function Footer() {
     { name: "Instagram", href: "https://www.instagram.com/momounirchefdoss?igsh=YWJldjkyajBzOXFy", icon: <FiInstagram size={20} /> },
     { name: "X", href: "https://x.com/MounirKx", icon: <FiX size={20} /> },
     { name: "WhatsApp", href: "https://wa.me/237692854104", icon: <FiMessageCircle size={20} /> },
-    { name: "Facebook", href: "https://www.tiktok.com/@lifedesigne?_r=1&_t=ZS-9850e8cKBk0", icon: <FaFacebook size={20} /> },
-    { name: "TikTok", href: "https://www.facebook.com/mounir.chefdossier?mibextid=ZbWKwL", icon: <FaTiktok size={20} /> },
+    { name: "TikTok", href: "https://www.tiktok.com/@lifedesigne?_r=1&_t=ZS-9850e8cKBk0", icon:<FaTiktok size={20} />},
+    { name: "Facebook", href: "https://www.facebook.com/mounir.chefdossier?mibextid=ZbWKwL", icon: <FaFacebook size={20} />},
   ];
 
   return (
