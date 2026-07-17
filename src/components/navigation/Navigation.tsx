@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FiMenu, FiGithub, FiLinkedin, FiInstagram, FiX, FiMessageCircle, FiMail } from 'react-icons/fi';
 import { FaTiktok, FaFacebook } from "react-icons/fa6";
+import Image from "next/image";
 
 export default function Navigation() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -19,7 +20,15 @@ export default function Navigation() {
       <header className="sticky top-0 w-full bg-white/80 backdrop-blur-md z-[60] border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center text-white font-black text-[10px]">M.</div>
+            <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center text-white font-black text-[10px]">
+                
+                <Image 
+                    src="/logo.png"
+                    alt="Logo"
+                    width={25}
+                    height={25}
+                />
+            </div>
             <div className="flex flex-col">
               <span className="text-[10px] font-black uppercase text-black tracking-widest">Mounir</span>
             </div>
